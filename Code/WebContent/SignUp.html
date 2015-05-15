@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<script type="text/javascript" src="scripts/jquery-2.1.1.js"></script>
+<title>Sign up Page</title>
+
+<style>
+body {
+	background-color: silver;
+}
+
+div#signUpForm {
+	height: 650px;
+	width: 400px;
+	background-color: white;
+	margin-top: 10px;
+	margin-left: 475px;
+	border-radius: 20px;
+}
+</style>
+
+<script>
+	function validateInputDetails() {
+
+		var userEmail = document.getElementById("userEmail").value.trim();
+		var userName = document.getElementById("userName").value.trim();
+		var phoneNumber = document.getElementById("telePhone").value.trim();
+		var userAddress = document.getElementById("userAddress").value.trim();
+		var userCity = document.getElementById("userCity").value.trim();
+		var userZipCode = document.getElementById("userZipCode").value.trim();
+		var passWord = document.getElementById("passWord").value.trim();
+		var passWordConfirm = document.getElementById("passWordConfirm").value
+				.trim();
+		if (userEmail == "" || userName == "" || passWord == ""
+				|| passWordConfirm == "" || phoneNumber == ""
+				|| userAddress == "" || userCity == "" || userZipCode == "") {
+			alert("Input fields cannot be empty");
+			return false;
+		} else if (phoneNumber != "" && isNaN(phoneNumber)) {
+			alert("Phone Number should be numeric");
+			return false;
+		} else if (passWord.localeCompare(passWordConfirm) != 0) {
+			alert("passwords do not match");
+			return false;
+		}
+
+		return true;
+	}
+</script>
+</head>
+
+<body>
+	<div id="signUpForm">
+		<form action="createNewUserPath" method="post"
+			onsubmit="return validateInputDetails()">
+			<p style="margin-left: 103px; font-size: 21px; padding-top: 14px">
+				<b>Create a Free Account</b>
+			</p>
+
+			<input type="text" id="userEmail" name="userInputEmail"
+				placeholder="Enter Email Address *" autofocus
+				style="margin-left: 41px; padding: 6px; font-size: 20px; border-radius: 10px; width: 300px">
+
+			<input type="text" id="userName" name="userInputName"
+				placeholder="Enter Full Name *"
+				style="margin-left: 41px; margin-top: 17px; padding: 8px; font-size: 20px; border-radius: 10px; width: 300px">
+
+			<input type="tel" id="telePhone" name="userInputPhoneNumber"
+				placeholder="Enter Phone Number *"
+				style="margin-left: 41px; margin-top: 17px; padding: 8px; font-size: 20px; border-radius: 10px; width: 300px">
+
+			<select id="userType" name="userType" required="required"
+				style="margin-left: 41px; margin-top: 17px; padding: 8px; font-size: 20px; border-radius: 10px; width: 300px">
+				<option value="Provider">Provider</option>
+				<option value="Distributor">Distributor</option>
+			</select>
+
+			<!--  -->
+
+			<input type="text" id="userAddress" name="userAddress"
+				placeholder="Enter Your Address *"
+				style="margin-left: 41px; margin-top: 17px; padding: 8px; font-size: 20px; border-radius: 10px; width: 300px">
+
+			<input type="text" id="userCity" name="userCity"
+				placeholder="Enter Your City *"
+				style="margin-left: 41px; margin-top: 17px; padding: 8px; font-size: 20px; border-radius: 10px; width: 300px">
+
+			<input type="text" id="userZipCode" name="userZipCode"
+				placeholder="Enter your ZipCode *"
+				style="margin-left: 41px; margin-top: 17px; padding: 8px; font-size: 20px; border-radius: 10px; width: 300px">
+
+			<input type="password" id="passWord" name="userInputPassWord"
+				placeholder="Enter Password *"
+				style="margin-left: 41px; margin-top: 17px; padding: 8px; font-size: 20px; border-radius: 10px; width: 300px">
+
+			<input type="password" id="passWordConfirm"
+				name="userInputConfirmPassWord" placeholder="Confirm Password *"
+				style="margin-left: 41px; margin-top: 17px; padding: 8px; font-size: 20px; border-radius: 10px; width: 300px">
+
+			<input type="submit"
+				style="margin-left: 50px; margin-top: 17px; padding: 7px; font-size: 20px; border-radius: 10px; width: 300px; font-weight: bold;"
+				value="Create Account">
+		</form>
+	</div>
+</body>
+</html>

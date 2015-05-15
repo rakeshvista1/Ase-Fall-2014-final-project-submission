@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	id="WebApp_ID" version="3.0">
+	<display-name>com.AsePhase1</display-name>
+	<welcome-file-list>
+		<welcome-file>HomePage.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>loginValidate</servlet-name>
+		<servlet-class>com.AsePhase2.Model.LoginValidate</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>loginValidate</servlet-name>
+		<url-pattern>/loginValidatePath</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>createNewUserScreen</servlet-name>
+		<servlet-class>com.AsePhase2.Model.NewUserValidate</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>createNewUserScreen</servlet-name>
+		<url-pattern>/createNewUserPath</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>userLogout</servlet-name>
+		<servlet-class>com.AsePhase2.Model.UserLogout</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>userLogout</servlet-name>
+		<url-pattern>/logOutPath</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>foodDonation</servlet-name>
+		<servlet-class>com.AsePhase2.Model.FoodDonation</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>foodDonation</servlet-name>
+		<url-pattern>/foodDonationPath</url-pattern>
+	</servlet-mapping>
+</web-app>
